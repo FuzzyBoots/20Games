@@ -22,8 +22,6 @@ namespace Pong
 
             Assert.IsNotNull(_body, "Null RB!");
 
-            Debug.Log($"Current RigidBody is defined: {_body != null}");
-
             ResetBall();
         }
 
@@ -43,7 +41,6 @@ namespace Pong
 
         public void ResetBall()
         {
-            Debug.Log($"Entering ResetBall. RB is not null? {_body != null}");
             transform.position = Vector3.zero;
 
             _body.linearVelocity = Vector3.zero;
