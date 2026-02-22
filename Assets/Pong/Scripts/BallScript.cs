@@ -10,6 +10,8 @@ namespace Pong
         [SerializeField] float _launchDelay = 2f;
         Rigidbody _body;
         WaitForSeconds _launchWait = new WaitForSeconds(2f);
+
+        AudioSource _audioSource;
         private void OnValidate()
         {
             _launchWait = new WaitForSeconds(_launchDelay);
@@ -19,8 +21,10 @@ namespace Pong
         void Start()
         {
             _body = GetComponent<Rigidbody>();
-
             Assert.IsNotNull(_body, "Null RB!");
+
+            _audioSource = GetComponent<AudioSource>();
+            Assert.IsNotNull(_audioSource, "Null Audiosource!");
 
             ResetBall();
         }
@@ -47,6 +51,12 @@ namespace Pong
             _body.angularVelocity = Vector3.zero;
 
             StartCoroutine(LaunchBall());
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            _audioSource.pitch = Random.Range(0.8f, 1.2f);
+            _audioSource.Play();
         }
     }
 }
