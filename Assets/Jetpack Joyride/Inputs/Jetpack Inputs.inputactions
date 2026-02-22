@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "name": "Jetpack Inputs",
+    "maps": [
+        {
+            "name": "Jetpack",
+            "id": "068a3b9b-f1bf-428e-af62-5d0d10c1c396",
+            "actions": [
+                {
+                    "name": "Jetpack",
+                    "type": "Button",
+                    "id": "d11bac9f-49eb-417f-9ecf-51bb72511261",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e21a9642-f2fc-431c-8696-2de75620e49d",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jetpack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddcc53f3-7af6-4214-af3a-058fc18b7bb0",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jetpack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
