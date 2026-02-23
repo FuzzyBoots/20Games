@@ -397,9 +397,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e54aeaba21e3ff499e1006eedce50a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JetpackJoyride.SpawnManager
-  _bounds: {x: 1, y: 5}
-  _spawnInterval: 2
-  _obstaclePrefab: {fileID: 8601066733659879069, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
+  _spawnInterval: 2.5
+  _obstaclePrefabs:
+  - {fileID: 7095548518225847269, guid: eea1d9f06828c79498290dcca5d05b05, type: 3}
+  - {fileID: 2427139231949856672, guid: d400eec89592d6b47bc0ebab2d618fdf, type: 3}
+  - {fileID: 2098029513283548464, guid: de0fae3e13203a647a744a9800d2bb62, type: 3}
+  - {fileID: 5662942065524775355, guid: f78334f1a92906e40bd1f46453538546, type: 3}
+  _obstacleSpeed: 3
 --- !u!4 &551754037
 Transform:
   m_ObjectHideFlags: 0
@@ -698,63 +702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JetpackScript
   _jetpackForce: 20
---- !u!1001 &3181458414673917451
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3421018242501361341, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421018242501361341, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421018242501361341, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421018242501361341, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421018242501361341, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421018242501361341, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421018242501361341, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421018242501361341, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421018242501361341, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421018242501361341, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8601066733659879069, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
-      propertyPath: m_Name
-      value: Obstacle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 090b2e29278d2994b8178a22b810dbfd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -763,5 +710,4 @@ SceneRoots:
   - {fileID: 266622845}
   - {fileID: 1504104945}
   - {fileID: 1774519388}
-  - {fileID: 3181458414673917451}
   - {fileID: 551754037}

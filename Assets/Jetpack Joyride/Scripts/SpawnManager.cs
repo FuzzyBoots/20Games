@@ -5,27 +5,32 @@ namespace JetpackJoyride
 {
     public class SpawnManager : MonoBehaviour
     {
-        [SerializeField] Vector2 _bounds = new Vector2(1, 5);
-
         [SerializeField] float _spawnInterval = 2f;
 
-        [SerializeField] GameObject _obstaclePrefab;
+        [SerializeField] ObstacleScript[] _obstaclePrefabs;
+
+        [SerializeField] float _obstacleSpeed = 3f;
 
 
         bool _spawning = false;
 
         public void Start()
         {
+            _spawning = true;
             StartCoroutine(SpawnObstacles());
         }
 
 
         IEnumerator SpawnObstacles()
         {
-            while (true)
+            while (_spawning)
             {
-                GameObject obstacle = Instantiate(_obstaclePrefab);
-                obstacle.transform.position = new Vector3(8f, Random.Range(_bounds.x, _bounds.y), 0f);
+                ObstacleScript obstacle = Instantiate(_obstaclePrefabs[Random.Range(0, _obstaclePrefabs.Length)]);
+
+                obstacle.SetSpeed(_obstacleSpeed);
+
+                Debug.Log($"Spawning between {obstacle.GetLowerBound()} and {obstacle.GetUpperBound()}");
+                obstacle.transform.position = new Vector3(8f, Random.Range(obstacle.GetLowerBound(), obstacle.GetUpperBound()), 0f);
 
                 yield return new WaitForSeconds(_spawnInterval);
             }

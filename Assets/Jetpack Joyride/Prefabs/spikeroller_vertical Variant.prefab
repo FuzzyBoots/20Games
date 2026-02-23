@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4908093895216357282
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      propertyPath: m_Name
+      value: spikeroller_vertical Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7542087560536378824}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2098029513283548464}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2269254553820984273}
+  m_SourcePrefab: {fileID: 100100000, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+--- !u!1 &5250181995646903027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bde77273c0c10034b93fd3959108721a, type: 3}
+  m_PrefabInstance: {fileID: 4908093895216357282}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7542087560536378824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5250181995646903027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5b8f77d843a5d4c8007f6f94d9811b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _rotation: {x: 0, y: 45, z: 0}
+--- !u!114 &2098029513283548464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5250181995646903027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c0b770b4455704098b83776bb56e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JetpackJoyride.ObstacleScript
+  _speed: 2
+  _leftBound: -7
+  _bounds: {x: 0, y: 0}
+--- !u!136 &2269254553820984273
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5250181995646903027}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9999998
+  m_Height: 2.4000003
+  m_Direction: 1
+  m_Center: {x: -0.00000047683716, y: 1.2000002, z: -0.00000029802322}
