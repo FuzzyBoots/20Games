@@ -27,12 +27,12 @@ namespace JetpackJoyride
 
         public void UpdateScore(float score)
         {
-            _scoreText.text = $"Distance: {score}";
+            _scoreText.text = $"Distance: {score:F2}";
         }
 
         public void UpdateHighScore(float score)
         {
-            _highScoreText.text = $"High Score: {score}";
+            _highScoreText.text = $"High Score: {score:F2}";
         }
 
         public void DisplayScoreScreen(float distanceTraveled, float highScore)

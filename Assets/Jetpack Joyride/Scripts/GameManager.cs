@@ -76,6 +76,7 @@ namespace JetpackJoyride {
 
         public void StopGame()
         {
+            Debug.Log("Hit StopGame");
             SpawnManager.Instance.StopSpawning();
 
             GameSpeed = 0;

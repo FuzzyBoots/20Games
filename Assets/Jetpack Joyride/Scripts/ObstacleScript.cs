@@ -27,11 +27,12 @@ namespace JetpackJoyride
                 Destroy(gameObject);    // We should actually be doing pooling, of course
             }
         }
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player"))
             {
                 Debug.Log("Game Over");
+
                 GameManager.Instance.StopGame();
             }
         }

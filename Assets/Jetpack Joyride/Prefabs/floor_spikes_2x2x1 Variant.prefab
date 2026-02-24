@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floor_spikes_2x2x1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db895ec86453b9e47b0d41ed39257d43, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84,8 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c0b770b4455704098b83776bb56e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JetpackJoyride.ObstacleScript
-  _speed: 3
-  _leftBound: -7
+  _leftBound: -9
   _bounds: {x: 0, y: 0}
 --- !u!65 &-8853849308143048129
 BoxCollider:
@@ -102,7 +105,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
