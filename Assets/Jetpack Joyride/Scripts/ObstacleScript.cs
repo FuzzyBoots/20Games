@@ -4,8 +4,6 @@ namespace JetpackJoyride
 {
     public class ObstacleScript : MonoBehaviour
     {
-        float _speed;
-
         [SerializeField] float _leftBound = -7f;
 
         [SerializeField] Vector2 _bounds = new Vector2(1, 5);
@@ -20,14 +18,9 @@ namespace JetpackJoyride
             return Mathf.Max(_bounds.x, _bounds.y);
         }
 
-        public void SetSpeed(float speed)
-        {
-            _speed = speed;
-        }
-
         private void Update()
         {
-            transform.Translate(_speed * Time.deltaTime * Vector3.left, Space.World);
+            transform.Translate(GameManager.Instance.GameSpeed * Time.deltaTime * Vector3.left, Space.World);
 
             if (transform.position.x < _leftBound)
             {
@@ -39,6 +32,7 @@ namespace JetpackJoyride
             if (collision.gameObject.CompareTag("Player"))
             {
                 Debug.Log("Game Over");
+                GameManager.Instance.StopGame();
             }
         }
     }

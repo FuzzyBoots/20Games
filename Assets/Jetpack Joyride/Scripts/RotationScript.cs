@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class RotationScript : MonoBehaviour
+namespace JetpackJoyride
 {
-    [SerializeField] Vector3 _rotation;
-
-    // Update is called once per frame
-    void Update()
+    public class RotationScript : MonoBehaviour
     {
-        transform.Rotate(_rotation * Time.deltaTime);
+        [SerializeField] Vector3 _rotation;
+
+        // Update is called once per frame
+        void Update()
+        {
+            transform.Rotate(_rotation * Time.deltaTime);
+        }
     }
 }

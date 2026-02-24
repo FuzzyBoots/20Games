@@ -8,6 +8,7 @@ namespace JetpackJoyride
     [RequireComponent(typeof(Collider))]
     public class JetpackScript : MonoBehaviour
     {
+        Animator _animator;
         Rigidbody _rb;
         JetpackInputs _inputs;
         [SerializeField] float _jetpackForce = 5f;
@@ -18,6 +19,7 @@ namespace JetpackJoyride
         void Start()
         {
             _rb = GetComponent<Rigidbody>();
+            _animator = GetComponent<Animator>();
             _inputs = new JetpackInputs();
             _inputs.Jetpack.Enable();
 
@@ -37,6 +39,7 @@ namespace JetpackJoyride
 
         private void Update()
         {
+            _animator?.SetBool("Hovering", transform.position.y > 0.1f);
             if (_thrusting)
             {
                 _rb.AddForce(_jetpackForce * Vector3.up * Time.deltaTime, ForceMode.Impulse);

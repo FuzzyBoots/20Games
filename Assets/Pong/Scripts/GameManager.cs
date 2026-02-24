@@ -6,12 +6,12 @@ namespace Pong
 {
     public class GameManager : MonoBehaviour
     {
-        public static GameManager Instance { get; private set; }
-
         [SerializeField] int _leftScore = 0;
         [SerializeField] int _rightScore = 0;
 
         [SerializeField] BallScript _ball;
+
+        public static GameManager Instance { get; private set; }
 
         private void Awake()
         {
