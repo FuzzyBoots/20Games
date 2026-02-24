@@ -20,25 +20,12 @@ namespace JetpackJoyride
         {
             _rb = GetComponent<Rigidbody>();
             _animator = GetComponent<Animator>();
-            _inputs = new JetpackInputs();
-            _inputs.Jetpack.Enable();
-
-            _inputs.Jetpack.Jetpack.started += Jetpack_started;
-            _inputs.Jetpack.Jetpack.canceled += Jetpack_canceled;
-        }
-
-        private void Jetpack_canceled(InputAction.CallbackContext obj)
-        {
-            _thrusting = false;
-        }
-
-        private void Jetpack_started(InputAction.CallbackContext obj)
-        {
-            _thrusting = true;
         }
 
         private void Update()
         {
+            if (!GameManager.Instance.GameSessionActive) return;
+
             _animator?.SetBool("Hovering", transform.position.y > 0.1f);
             if (_thrusting)
             {

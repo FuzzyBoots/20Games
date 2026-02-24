@@ -71,7 +71,7 @@ namespace JetpackJoyride {
 
             _gameSpeedCoroutine = StartCoroutine(UpdateGameSpeed());
 
-            _gameSessionActive = true;
+            GameSessionActive = true;
         }
 
         public void StopGame()
@@ -89,10 +89,13 @@ namespace JetpackJoyride {
             }
 
             UIManager.Instance.DisplayScoreScreen(distanceTraveled, highScore);
+            GameSessionActive = false;
         }
 
         private void Update()
         {
+            if (!GameManager.Instance.GameSessionActive) return;
+
             distanceTraveled += GameManager.Instance.GameSpeed * Time.deltaTime;
             UIManager.Instance.UpdateScore(distanceTraveled);
         }
