@@ -28,6 +28,7 @@ namespace JetpackJoyride {
         [SerializeField]
         private float _baseGameSpeed = 3f;
 
+        [field: SerializeField]
         public float GameSpeed { get; set; }
 
         private const string HIGH_SCORE = "High Score";
@@ -62,11 +63,6 @@ namespace JetpackJoyride {
 
             SpawnManager.Instance.StartSpawning();
 
-            if (_gameSpeedCoroutine != null)
-            {
-                StopCoroutine(_gameSpeedCoroutine);
-            }
-
             GameSpeed = _baseGameSpeed;
 
             _gameSpeedCoroutine = StartCoroutine(UpdateGameSpeed());
@@ -80,6 +76,11 @@ namespace JetpackJoyride {
             SpawnManager.Instance.StopSpawning();
 
             GameSpeed = 0;
+
+            if (_gameSpeedCoroutine != null)
+            {
+                StopCoroutine(_gameSpeedCoroutine);
+            }
 
             float highScore = PlayerPrefs.GetFloat(HIGH_SCORE);
             UIManager.Instance.UpdateHighScore(highScore);

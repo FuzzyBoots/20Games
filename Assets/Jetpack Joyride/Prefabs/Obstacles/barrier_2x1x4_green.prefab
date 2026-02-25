@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7178801868150117937
+--- !u!1 &2111969430151768087
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8958430870797999235}
-  - component: {fileID: 2620695015498956959}
-  - component: {fileID: 3324647103887146862}
-  - component: {fileID: 5662942065524775355}
-  - component: {fileID: 2706227271246097037}
+  - component: {fileID: 2266773541914535714}
+  - component: {fileID: 3238730315885257481}
+  - component: {fileID: 2843674316168042882}
+  - component: {fileID: 6815476040315746025}
+  - component: {fileID: 1375963720069469448}
+  - component: {fileID: -1830278109658809083}
   m_Layer: 0
-  m_Name: barrier_2x1x1_blue
-  m_TagString: Obstacle
+  m_Name: barrier_2x1x4_green
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8958430870797999235
+--- !u!4 &2266773541914535714
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7178801868150117937}
+  m_GameObject: {fileID: 2111969430151768087}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!33 &2620695015498956959
+--- !u!33 &3238730315885257481
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7178801868150117937}
-  m_Mesh: {fileID: 3728724539066494926, guid: 200325f550a5ca54c85ca9438416daa5, type: 3}
---- !u!23 &3324647103887146862
+  m_GameObject: {fileID: 2111969430151768087}
+  m_Mesh: {fileID: -4835273446675191929, guid: d3249fb16204c8a409dacd0452073edf, type: 3}
+--- !u!23 &2843674316168042882
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7178801868150117937}
+  m_GameObject: {fileID: 2111969430151768087}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -92,27 +93,25 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5662942065524775355
+--- !u!114 &6815476040315746025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7178801868150117937}
+  m_GameObject: {fileID: 2111969430151768087}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3c0b770b4455704098b83776bb56e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JetpackJoyride.ObstacleScript
-  _leftBound: -9
-  _bounds: {x: 0, y: 6}
---- !u!65 &2706227271246097037
+--- !u!65 &1375963720069469448
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7178801868150117937}
+  m_GameObject: {fileID: 2111969430151768087}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -121,9 +120,23 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0000014, y: 1.0000002, z: 1.0000005}
-  m_Center: {x: 0, y: 0.5000001, z: -0.00000014901164}
+  m_Size: {x: 2.0000014, y: 4, z: 1.000001}
+  m_Center: {x: 0, y: 2, z: -0.00000038743028}
+--- !u!114 &-1830278109658809083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111969430151768087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1bb1afc2a489d44b2ef227a32e7f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JetpackJoyride.MovingItemScript
+  _leftBound: -9
+  _bounds: {x: 1, y: 5}

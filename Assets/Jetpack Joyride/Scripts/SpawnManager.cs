@@ -23,15 +23,33 @@ namespace JetpackJoyride
 
         [SerializeField] float _spawnInterval = 2f;
 
-        [SerializeField] ObstacleScript[] _obstaclePrefabs;
+        [SerializeField] MovingItemScript[] _obstaclePrefabs;
 
-        
+        [SerializeField] MovingItemScript[] _floorPrefabs;
+        MovingItemScript _lastFloor;
+        [SerializeField] float _tileWidth = 8f;
+        [SerializeField] float _spawnXPosition = 12f; // Where tiles appear on the right
+
+
         bool _spawning = false;
 
         public void StartSpawning()
         {
             _spawning = true;
             StartCoroutine(SpawnObstacles());
+
+            BuildInitialFloor();
+        }
+
+        MovingItemScript GetRandomFloor() {             
+            return _floorPrefabs[Random.Range(0, _floorPrefabs.Length)];
+        }
+
+        private void BuildInitialFloor()
+        {
+            // Generate tiles at -4 and 4
+            _lastFloor = Instantiate(GetRandomFloor(), new Vector3(-4f, 0f, 0f), Quaternion.identity);
+            _lastFloor = Instantiate(GetRandomFloor(), new Vector3( 4f, 0f, 0f), Quaternion.identity);
         }
 
         public void StopSpawning()
@@ -39,12 +57,19 @@ namespace JetpackJoyride
             _spawning = false;
         }
 
+        public void Update()
+        {
+            if (_lastFloor.transform.position.x < _spawnXPosition)
+            {
+                _lastFloor = Instantiate(GetRandomFloor(), new Vector3(_lastFloor.transform.position.x + _tileWidth, 0f, 0f), Quaternion.identity);
+            }
+        }
 
         IEnumerator SpawnObstacles()
         {
             while (_spawning)
             {
-                ObstacleScript obstacle = Instantiate(_obstaclePrefabs[Random.Range(0, _obstaclePrefabs.Length)]);
+                MovingItemScript obstacle = Instantiate(_obstaclePrefabs[Random.Range(0, _obstaclePrefabs.Length)]);
 
                 obstacle.transform.position = new Vector3(8f, Random.Range(obstacle.GetLowerBound(), obstacle.GetUpperBound()), 0f);
 

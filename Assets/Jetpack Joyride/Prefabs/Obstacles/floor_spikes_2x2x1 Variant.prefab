@@ -70,6 +70,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: db895ec86453b9e47b0d41ed39257d43, type: 3}
       insertIndex: -1
       addedObject: {fileID: -8853849308143048129}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: db895ec86453b9e47b0d41ed39257d43, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1123622662711373576}
   m_SourcePrefab: {fileID: 100100000, guid: db895ec86453b9e47b0d41ed39257d43, type: 3}
 --- !u!1 &8179369744876570308 stripped
 GameObject:
@@ -88,8 +91,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c0b770b4455704098b83776bb56e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JetpackJoyride.ObstacleScript
-  _leftBound: -9
-  _bounds: {x: 0, y: 0}
 --- !u!65 &-8853849308143048129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,3 +112,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1.0000002, z: 2}
   m_Center: {x: 0, y: 0.49999997, z: -0.000000059604645}
+--- !u!114 &1123622662711373576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179369744876570308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1bb1afc2a489d44b2ef227a32e7f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JetpackJoyride.MovingItemScript
+  _leftBound: -9
+  _bounds: {x: 0, y: 0}

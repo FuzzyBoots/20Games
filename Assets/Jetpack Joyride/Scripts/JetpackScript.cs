@@ -11,7 +11,8 @@ namespace JetpackJoyride
         Animator _animator;
         Rigidbody _rb;
         JetpackInputs _inputs;
-        [SerializeField] float _jetpackForce = 5f;
+        [SerializeField] float _jetpackForce = 20f;
+        [SerializeField] float _upperBound = 7f;
 
         bool _thrusting = false;
 
@@ -43,7 +44,7 @@ namespace JetpackJoyride
             if (!GameManager.Instance.GameSessionActive) return;
 
             _animator?.SetBool("Hovering", transform.position.y > 0.1f);
-            if (_thrusting)
+            if (_thrusting && transform.position.y < _upperBound)
             {
                 _rb.AddForce(_jetpackForce * Time.deltaTime * Vector3.up, ForceMode.Impulse);
             }
