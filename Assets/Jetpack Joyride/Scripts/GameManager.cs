@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace JetpackJoyride {
     public class GameManager : MonoBehaviour
@@ -33,6 +36,7 @@ namespace JetpackJoyride {
 
         private const string HIGH_SCORE = "High Score";
         float distanceTraveled = 0;
+        private JetpackInputs _inputs;
 
         public bool GameSessionActive { get; private set; }
 
@@ -50,7 +54,22 @@ namespace JetpackJoyride {
 
         private void Start()
         {
+            GameSessionActive = true;
+            _inputs = new JetpackInputs();
+            _inputs.Jetpack.Enable();
+
+            _inputs.Jetpack.Restart.performed += Restart_performed;
+
             StartGame();
+        }
+
+        private void Restart_performed(InputAction.CallbackContext context)
+        {
+            Debug.Log(GameSessionActive);
+            if (!GameSessionActive)
+            {
+                SceneManager.LoadScene(0);
+            }
         }
 
         public void StartGame()
@@ -67,12 +86,12 @@ namespace JetpackJoyride {
 
             _gameSpeedCoroutine = StartCoroutine(UpdateGameSpeed());
 
+            Debug.Log("Game Started");
             GameSessionActive = true;
         }
 
         public void StopGame()
         {
-            Debug.Log("Hit StopGame");
             SpawnManager.Instance.StopSpawning();
 
             GameSpeed = 0;
@@ -88,9 +107,11 @@ namespace JetpackJoyride {
             if (distanceTraveled > highScore)
             {
                 PlayerPrefs.SetFloat(HIGH_SCORE, distanceTraveled);
+
+                UIManager.Instance.UpdateHighScore(distanceTraveled);
             }
 
-            UIManager.Instance.DisplayScoreScreen(distanceTraveled, highScore);
+            UIManager.Instance.DisplayRestartScreen(true);
             GameSessionActive = false;
         }
 

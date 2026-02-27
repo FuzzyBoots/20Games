@@ -24,6 +24,7 @@ namespace JetpackJoyride
 
         [SerializeField] TMP_Text _scoreText;
         [SerializeField] TMP_Text _highScoreText;
+        [SerializeField] GameObject _restartDialog;
 
         public void UpdateScore(float score)
         {
@@ -35,9 +36,9 @@ namespace JetpackJoyride
             _highScoreText.text = $"High Score: {score:F2}";
         }
 
-        public void DisplayScoreScreen(float distanceTraveled, float highScore)
+        public void DisplayRestartScreen(bool enabled)
         {
-            // How do we want to handle this?
+            _restartDialog.SetActive(enabled);
         }
     }
 }

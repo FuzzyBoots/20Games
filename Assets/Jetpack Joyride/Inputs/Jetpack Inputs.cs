@@ -100,6 +100,15 @@ public partial class @JetpackInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""0c1fb983-b376-4b01-9077-2c5cb45cf17f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -124,6 +133,17 @@ public partial class @JetpackInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Jetpack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e5e387f-9883-4810-ae27-354aa02bb988"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -133,6 +153,7 @@ public partial class @JetpackInputs: IInputActionCollection2, IDisposable
         // Jetpack
         m_Jetpack = asset.FindActionMap("Jetpack", throwIfNotFound: true);
         m_Jetpack_Jetpack = m_Jetpack.FindAction("Jetpack", throwIfNotFound: true);
+        m_Jetpack_Restart = m_Jetpack.FindAction("Restart", throwIfNotFound: true);
     }
 
     ~@JetpackInputs()
@@ -214,6 +235,7 @@ public partial class @JetpackInputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Jetpack;
     private List<IJetpackActions> m_JetpackActionsCallbackInterfaces = new List<IJetpackActions>();
     private readonly InputAction m_Jetpack_Jetpack;
+    private readonly InputAction m_Jetpack_Restart;
     /// <summary>
     /// Provides access to input actions defined in input action map "Jetpack".
     /// </summary>
@@ -229,6 +251,10 @@ public partial class @JetpackInputs: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Jetpack/Jetpack".
         /// </summary>
         public InputAction @Jetpack => m_Wrapper.m_Jetpack_Jetpack;
+        /// <summary>
+        /// Provides access to the underlying input action "Jetpack/Restart".
+        /// </summary>
+        public InputAction @Restart => m_Wrapper.m_Jetpack_Restart;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -258,6 +284,9 @@ public partial class @JetpackInputs: IInputActionCollection2, IDisposable
             @Jetpack.started += instance.OnJetpack;
             @Jetpack.performed += instance.OnJetpack;
             @Jetpack.canceled += instance.OnJetpack;
+            @Restart.started += instance.OnRestart;
+            @Restart.performed += instance.OnRestart;
+            @Restart.canceled += instance.OnRestart;
         }
 
         /// <summary>
@@ -272,6 +301,9 @@ public partial class @JetpackInputs: IInputActionCollection2, IDisposable
             @Jetpack.started -= instance.OnJetpack;
             @Jetpack.performed -= instance.OnJetpack;
             @Jetpack.canceled -= instance.OnJetpack;
+            @Restart.started -= instance.OnRestart;
+            @Restart.performed -= instance.OnRestart;
+            @Restart.canceled -= instance.OnRestart;
         }
 
         /// <summary>
@@ -319,5 +351,12 @@ public partial class @JetpackInputs: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnJetpack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Restart" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRestart(InputAction.CallbackContext context);
     }
 }

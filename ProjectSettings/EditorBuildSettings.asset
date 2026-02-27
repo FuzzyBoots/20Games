@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Jetpack Joyride/Scenes/JetpackJoyride.unity
+    guid: a235b4c0645ced249b82483e229b9fce
+  - enabled: 0
     path: Assets/Pong/Scenes/Pong.unity
     guid: 3ed80639f34dd2c439c6ccf238cba3f5
   m_configObjects:
