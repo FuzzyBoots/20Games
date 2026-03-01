@@ -23,15 +23,15 @@ namespace SpaceInvaders
                 {
                     BulletScript bullet = Instantiate(_bulletPrefab, transform.position + Vector3.back, Quaternion.identity);
                     bullet.tag = "EnemyBullet";
-                    // bullet.SetRotation(180);
+                    bullet.SetIsEnemy(true);
                     Debug.DrawRay(transform.position, Vector3.back * 4);
-                    Debug.Break();
                 }
             }
         }
 
         private void OnTriggerEnter(Collider other)
         {
+            Debug.Log("Enemy collided with: " + other.gameObject.name);
             if (other.CompareTag("Bullet"))
             {
                 Destroy(gameObject);

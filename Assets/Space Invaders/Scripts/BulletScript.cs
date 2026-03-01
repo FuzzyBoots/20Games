@@ -5,6 +5,7 @@ namespace SpaceInvaders
     public class BulletScript : MonoBehaviour
     {
         [SerializeField] float _speed = 5f;
+        [SerializeField] bool _isEnemy = false;
 
         private void Start()
         {
@@ -16,21 +17,43 @@ namespace SpaceInvaders
             Destroy(gameObject);
         }
 
-        public void SetRotation(float angle)
+        public void SetIsEnemy(bool isEnemy)
         {
-            transform.rotation = Quaternion.Euler(0, angle, 0);
+            _isEnemy = isEnemy;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Bullet")) {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+            }
         }
 
         // Update is called once per frame
         void FixedUpdate()
         {
             Debug.Log("Forward: " + transform.forward);
-            transform.Translate(Time.fixedDeltaTime * _speed * transform.forward);
-
-            if (transform.position.y > 10)
+            if (_isEnemy)
             {
-                Destroy(gameObject);
+                transform.Translate(Time.fixedDeltaTime * _speed * -transform.forward);
+
+                if (transform.position.y < 0)
+                {
+                    Destroy(gameObject);
+                }
             }
+            else
+            {
+                transform.Translate(Time.fixedDeltaTime * _speed * transform.forward);
+
+                if (transform.position.y > 15)
+                {
+                    Destroy(gameObject);
+                }
+            }
+
+            
         }
     }
 }
