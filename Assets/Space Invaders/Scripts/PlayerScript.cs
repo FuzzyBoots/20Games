@@ -16,7 +16,7 @@ namespace SpaceInvaders
         Coroutine _fireCoroutine;
 
         GameObject _bullet;
-        private Vector3 _firePosition;
+        [SerializeField] private Transform _firePosition;
 
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -72,13 +72,17 @@ namespace SpaceInvaders
             while (true)
             {
                 yield return new WaitUntil(() => _bullet == null);
-                _bullet = Instantiate(_bulletPrefab, _firePosition, Quaternion.identity);
+                _bullet = Instantiate(_bulletPrefab, _firePosition.position, Quaternion.identity);
             }
         }
 
         private void HandleStopFiring(InputAction.CallbackContext context)
         {
-            throw new NotImplementedException();
+            if (_fireCoroutine != null)
+            {
+                StopCoroutine(_fireCoroutine);
+                _fireCoroutine = null;
+            }
         }
     }
 }

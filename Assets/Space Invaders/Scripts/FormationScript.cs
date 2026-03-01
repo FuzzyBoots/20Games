@@ -21,12 +21,14 @@ namespace SpaceInvaders
         {
             while (true)
             {
-                Debug.Log("Moving right");
+                float horizontalSpeed = 2 / _horizontalMovementTime;
+                float verticalSpeed = 1 / _verticalMovementTime;
+                
                 // Move the formation to the right 2 units over 1 second
                 float endTime = Time.time + _horizontalMovementTime;
                 while (Time.time < endTime)
                 {
-                    transform.Translate(Vector3.right * 2f * Time.deltaTime);
+                    transform.Translate(Vector3.right * horizontalSpeed * Time.deltaTime);
                     yield return new WaitForEndOfFrame();
                 }
                 yield return new WaitForSeconds(_horizontalMovementDelay);
@@ -34,17 +36,16 @@ namespace SpaceInvaders
                 endTime = Time.time + _verticalMovementTime;
                 while (Time.time < endTime)
                 {
-                    transform.Translate(Vector3.back * 1f * Time.deltaTime);
+                    transform.Translate(Vector3.back * verticalSpeed * Time.deltaTime);
                     yield return new WaitForEndOfFrame();
                 }
                 yield return new WaitForSeconds(_verticalMovementDelay); ;
 
-                Debug.Log("Moving left");
                 // Move the formation to the left 2 units over 1 second
                 endTime = Time.time + _horizontalMovementTime;
                 while (Time.time < endTime)
                 {
-                    transform.Translate(Vector3.left * 2f * Time.deltaTime);
+                    transform.Translate(Vector3.left * horizontalSpeed * Time.deltaTime);
                     yield return new WaitForEndOfFrame();
                 }
                 yield return new WaitForSeconds(_horizontalMovementDelay);
@@ -52,7 +53,7 @@ namespace SpaceInvaders
                 endTime = Time.time + _verticalMovementTime;
                 while (Time.time < endTime)
                 {
-                    transform.Translate(Vector3.back * 1f * Time.deltaTime);
+                    transform.Translate(Vector3.back * verticalSpeed * Time.deltaTime);
                     yield return new WaitForEndOfFrame();
                 }
                 yield return new WaitForSeconds(_verticalMovementDelay);

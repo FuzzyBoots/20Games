@@ -1,27 +1,36 @@
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+namespace SpaceInvaders
 {
-    [SerializeField]  float _speed = 5f;
-
-    private void OnBecameInvisible()
+    public class BulletScript : MonoBehaviour
     {
-        Destroy(gameObject);
-    }
+        [SerializeField] float _speed = 5f;
 
-    public void SetRotation(float angle)
-    {
-        transform.rotation = Quaternion.Euler(0, angle, 0);
-    }
+        private void Start()
+        {
+            Debug.Log("Start");
+        }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        transform.Translate(Time.fixedDeltaTime * _speed * transform.up);
+        private void OnBecameInvisible()
+        {
+            Destroy(gameObject);
+        }
 
-        if (transform.position.y > 10)
+        public void SetRotation(float angle)
+        {
+            transform.rotation = Quaternion.Euler(0, angle, 0);
+        }
+
+        // Update is called once per frame
+        void FixedUpdate()
+        {
+            Debug.Log("Forward: " + transform.forward);
+            transform.Translate(Time.fixedDeltaTime * _speed * transform.forward);
+
+            if (transform.position.y > 10)
             {
                 Destroy(gameObject);
+            }
         }
     }
 }
