@@ -29,11 +29,17 @@ namespace SpaceInvaders
             }
         }
 
+        private void OnCollisionEnter(Collision collision)
+        {
+            Debug.Log("Actual collision with " + collision.gameObject.name);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Enemy collided with: " + other.gameObject.name);
+            Debug.Log("Enemy collided with: " + other.gameObject.name + " tag of " + other.gameObject.tag);
             if (other.CompareTag("Bullet"))
             {
+                Debug.Log("Bullet?");
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2298351747073843578}
   - component: {fileID: 5351274133483783351}
   - component: {fileID: 2216549443418398851}
+  - component: {fileID: 975009938939082591}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -84,6 +85,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &975009938939082591
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446296857417749281}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Height: 0.4
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8691062379027717031
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +119,6 @@ GameObject:
   - component: {fileID: 2321568736846425857}
   - component: {fileID: 6321295352997990802}
   - component: {fileID: 6710200697823776126}
-  - component: {fileID: 2087464316618683120}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -175,26 +198,3 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2087464316618683120
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8691062379027717031}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000003
-  m_Height: 2.0000012
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
